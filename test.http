@@ -27,5 +27,5 @@ Content-Type: application/json
 PUT http://localhost:8888/productos.php HTTP/1.1
 
 {   "prodId": 6,
-    "prodDescripcion": "producto actualizadoxx",
+    "prodDescripcion": "producto actualizadoxxxx",
     "prodPrecio": 55555}

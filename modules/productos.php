@@ -10,6 +10,8 @@ class Producto {
 
     public $join = '';
 
+    //-----------------------------------------------GET/BUSQUEDA
+
     public function get ($db) {
         $sql = "SELECT $this->fields FROM $this->table
                 $this->join
@@ -32,6 +34,8 @@ class Producto {
         return $results;
     }
 
+    //-----------------------------------------------GET/ID
+
     public function getId ($db) {
         $sql = "SELECT $this->fields FROM $this->table
                 $this->join
@@ -44,6 +48,8 @@ class Producto {
         return $results;
     }
 
+    //-----------------------------------------------DELETE
+
     public function delete($db) {
         $sql = "UPDATE $this->table
                 SET  prodBorrado = 1
@@ -55,6 +61,8 @@ class Producto {
 
         return [];
     }
+
+    //-----------------------------------------------POST
 
     public function post($db) {
         $sql = "INSERT INTO $this->table
@@ -82,6 +90,8 @@ class Producto {
         return $results;
     }
 
+    //-----------------------------------------------PUT
+
     public function put ($db) {
         $stmt = SQL::query($db,
         "UPDATE $this->table
@@ -90,7 +100,7 @@ class Producto {
         WHERE prodId = ?",
         [DATA["prodDescripcion"], DATA["prodPrecio"], DATA["prodId"]]);
 
-        $results = [];
+        return $results = [];
     }
 
     
