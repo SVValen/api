@@ -10,7 +10,7 @@ GET http://localhost:8888/productos.php/14 HTTP/1.1
 
 ###
 
-DELETE http://localhost:8888/productos.php/4 HTTP/1.1
+DELETE http://localhost:8888/productos.php/5 HTTP/1.1
 
 
 ###
@@ -18,14 +18,14 @@ DELETE http://localhost:8888/productos.php/4 HTTP/1.1
 POST http://localhost:8888/productos.php HTTP/1.1
 Content-Type: application/json
 
-{"prodDescripcion": "test",
- "prodPrecio": 11111}
+{"prodDescripcion": "otrotest",
+ "prodPrecio": 44444}
 
 
 ###
 
 PUT http://localhost:8888/productos.php HTTP/1.1
 
-{   "prodId": 5,
-    "prodDescripcion": "producto actualizado",
-    "prodPrecio": 33333}
+{   "prodId": 6,
+    "prodDescripcion": "producto actualizadoxx",
+    "prodPrecio": 55555}
