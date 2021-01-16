@@ -1,0 +1,31 @@
+GET http://localhost:8888/productos.php HTTP/1.1
+
+###
+
+GET http://localhost:8888/productos.php?prodDescripcion=pro HTTP/1.1
+
+###
+
+GET http://localhost:8888/productos.php/14 HTTP/1.1
+
+###
+
+DELETE http://localhost:8888/productos.php/5 HTTP/1.1
+
+
+###
+
+POST http://localhost:8888/productos.php HTTP/1.1
+Content-Type: application/json
+
+{"prodDescripcion": "otrotest",
+ "prodPrecio": 44444}
+
+
+###
+
+PUT http://localhost:8888/productos.php HTTP/1.1
+
+{   "prodId": 6,
+    "prodDescripcion": "producto actualizadoxxxx",
+    "prodPrecio": 55555}
