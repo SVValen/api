@@ -29,3 +29,66 @@ PUT http://localhost:8888/productos.php HTTP/1.1
 {   "prodId": 6,
     "prodDescripcion": "producto actualizadoxxxx",
     "prodPrecio": 55555}
+
+
+###test-clientes
+
+GET http://localhost:8888/clientes.php HTTP/1.1
+
+###
+
+GET http://localhost:8888/clientes.php?clienNombre=test HTTP/1.1
+
+###
+
+GET http://localhost:8888/clientes.php/20 HTTP/1.1
+
+###
+
+DELETE http://localhost:8888/clientes.php/27 HTTP/1.1
+
+
+###
+
+POST http://localhost:8888/clientes.php HTTP/1.1
+Content-Type: application/json
+
+{   "clienNombre": "el test",
+    "clienDireccion": "calle falsa 123"}
+
+###
+
+PUT http://localhost:8888/clientes.php HTTP/1.1
+
+{   "clienId": 29,
+    "clienNombre": "nombre actualizadoxxxx",
+    "clienDireccion": "direccion actualizada"}
+
+
+###test-pedidos
+
+GET http://localhost:8888/pedidos.php HTTP/1.1
+
+###
+
+DELETE http://localhost:8888/pedidos.php/66 HTTP/1.1
+
+
+###
+
+POST http://localhost:8888/pedidos.php HTTP/1.1
+Content-Type: application/json
+
+{   "pediFecha": "2020-12-19T00:00:00",
+    "pediClienId": 29 }
+
+###
+
+PUT http://localhost:8888/pedidos.php HTTP/1.1
+
+{   "pediFecha": "2020-12-16T00:00:00",
+    "pediClienId": 28,
+    "pediId": 68
+}
+
+
