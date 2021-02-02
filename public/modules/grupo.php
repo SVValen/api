@@ -34,12 +34,9 @@ class Grupo
         $params = [$id];
         $stmt = SQL::query($db, $sql, $params);
 
-        $results = [];
-        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-            $results[] = $row;
-        }
+        sqlsrv_fetch($stmt);
 
-        return $results;
+        return [];
     }
     
     //---------------------------------POST
@@ -57,8 +54,8 @@ class Grupo
         $params = [DATA["grupNombre"],DATA["grupDescripcion"]];
         $stmt = SQL::query($db, $sql, $params);
 
-        sql_fetch($stmt);
-        sql_next_result($stmt);
+        sqlsrv_fetch($stmt);
+        sqlsrv_next_result($stmt);
         $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
 
         $results = DATA;
@@ -73,13 +70,13 @@ class Grupo
 
     public function put($db) {
         $sql = "UPDATE $this->table
-                SET (grupNombre = ?
-                    ,grupDescripcion = ?)
+                SET grupNombre = ?
+                    ,grupDescripcion = ?
                 WHERE grupId = ?";
         $params = [DATA["grupNombre"],DATA["grupDescripcion"],DATA["grupId"]];
         $stmt = SQL::query($db,$sql,$params);
 
-        sql_fetch($stmt);
+        sqlsrv_fetch($stmt);
 
         return DATA;
     }
