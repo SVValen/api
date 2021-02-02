@@ -25,7 +25,7 @@ $app = AppFactory::create();
 
 
 // Parse json, form data and xml
-$app->addBodyParsingMiddleware();
+//$app->addBodyParsingMiddleware();
 
 $app->addRoutingMiddleware();
 $middleware = $app->addErrorMiddleware(true,true,true);
@@ -41,20 +41,17 @@ include_once "globales.php";
 
 /************* API *************/
 
-include_once 'controllers/clientes.php';
-include_once 'controllers/productos.php';
-include_once 'controllers/pedidos.php';
-include_once 'controllers/pedido-detalle.php';
-include_once 'controllers/login.php';
+include_once 'controllers/grupo.php';
+include_once 'controllers/servicio.php';
 
 
 $app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("API Pedidos Version 1.3");
+    $response->getBody()->write("API");
     return $response;
 });
 
 $app->get('', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("API Pedidos Version 1.3");
+    $response->getBody()->write("API");
     return $response;
 });
 
@@ -110,5 +107,3 @@ function noCache() {
     header('Cache-Control: post-check=0, pre-check=0', false);
     header('Pragma: no-cache');
     }
-
-?>
